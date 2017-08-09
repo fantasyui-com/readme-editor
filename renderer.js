@@ -10,7 +10,7 @@ new Vue({
   el: '#editor',
   data: {
     file: '',
-    input: 'To open a file drag and drop it on the application window. <i class="fa fa-"></i>'
+    input: 'To open a file drag and drop it on the application window.'
   },
   created () {
 
@@ -20,7 +20,7 @@ new Vue({
 
     document.body.ondrop = (ev) => {
       this.file = ev.dataTransfer.files[0].path;
-      this.input = fs.readFileSync(this.file).toString();
+      if (this.file) this.input = fs.readFileSync(this.file).toString();
       ev.preventDefault()
     }
 
