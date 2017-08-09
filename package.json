@@ -1,6 +1,6 @@
 {
   "name": "readme-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Super simple readme editor (app-store example package)",
   "main": "main.js",
   "scripts": {
