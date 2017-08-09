@@ -3,40 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <title>Readme Editor</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/vue"></script>
-
     <style>
 
-
-    html, body, #editor {
+    html {
       margin: 0;
       height: 100%;
       font-family: 'Helvetica Neue', Arial, sans-serif;
       color: #333;
     }
 
-    textarea, #editor div {
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    #editor {
+      margin: 0;
+      height: 100%;
+    }
+
+    #editor .edit {
       display: inline-block;
       width: 49%;
       height: 100%;
       vertical-align: top;
       box-sizing: border-box;
 
-    }
+      padding: 2rem;
 
-      textarea { padding: 2rem; }
-      #editor div { padding: 1rem; }
-
-    textarea {
       border: none;
       border-right: 1px solid #ccc;
       resize: none;
@@ -45,7 +46,26 @@
       font-size: 14px;
       font-family: 'Monaco', courier, monospace;
       padding: 20px;
+
     }
+
+    #editor .preview {
+      display: inline-block;
+      width: 49%;
+
+      height: 100%;
+      max-height: 100%;
+      overflow: scroll;
+
+      vertical-align: top;
+      box-sizing: border-box;
+
+      padding: 1rem;
+    }
+
+
+
+
 
     code {
       color: #f66;
@@ -84,8 +104,8 @@
       </nav>
 
     <div id="editor">
-      <textarea :value="input" @input="update"></textarea>
-      <div v-html="compiledMarkdown"></div>
+      <textarea class="edit" :value="input" @input="update"></textarea>
+      <div class="preview" v-html="compiledMarkdown"></div>
     </div>
 
 

@@ -10,7 +10,7 @@ new Vue({
   el: '#editor',
   data: {
     file: '',
-    input: 'To open a file drag and drop it on the application.'
+    input: 'To open a file drag and drop it on the application window. <i class="fa fa-"></i>'
   },
   created () {
 
@@ -33,7 +33,7 @@ new Vue({
   methods: {
     update: _.debounce(function (e) {
       this.input = e.target.value;
-      fs.writeFileSync(this.file, this.input);
+      if (this.file) fs.writeFileSync(this.file, this.input);
     }, 300)
   }
 })
