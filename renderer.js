@@ -10,7 +10,7 @@ new Vue({
   el: '#editor',
   data: {
     file: '',
-    input: 'To open a file drag and drop it on the application window.'
+    input: 'To open a file drag and drop it on the application window, changes are saved as you type.'
   },
   created () {
 
