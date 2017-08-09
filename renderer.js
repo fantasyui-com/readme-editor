@@ -4,11 +4,26 @@
 
 const _ = require('lodash');
 const marked = require('marked');
+const fs = require('fs')
 
 new Vue({
   el: '#editor',
   data: {
-    input: '# Readme Editor'
+    file: '',
+    input: 'To open a file drag and drop it on the application.'
+  },
+  created () {
+
+    document.ondragover = document.ondrop = (ev) => {
+      ev.preventDefault()
+    }
+
+    document.body.ondrop = (ev) => {
+      this.file = ev.dataTransfer.files[0].path;
+      this.input = fs.readFileSync(this.file).toString();
+      ev.preventDefault()
+    }
+
   },
   computed: {
     compiledMarkdown: function () {
@@ -17,7 +32,8 @@ new Vue({
   },
   methods: {
     update: _.debounce(function (e) {
-      this.input = e.target.value
+      this.input = e.target.value;
+      fs.writeFileSync(this.file, this.input);
     }, 300)
   }
 })
