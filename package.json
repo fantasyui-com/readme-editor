@@ -19,6 +19,6 @@
   "homepage": "https://github.com/fantasyui-com/readme-editor#readme",
   "dependencies": {
     "lodash": "^4.17.4",
-    "marked": "^0.3.6"
+    "marked": "^0.6.2"
   }
 }
