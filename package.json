@@ -4,7 +4,7 @@
   "description": "Super simple readme editor (app-store example package)",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "dependencies": {
     "lodash": "^4.17.14",
     "marked": "^0.7.0"
+  },
+  "devDependencies": {
+    "electron": "^5.0.7"
   }
 }
