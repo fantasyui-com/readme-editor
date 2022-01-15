@@ -19,7 +19,7 @@
   "homepage": "https://github.com/fantasyui-com/readme-editor#readme",
   "dependencies": {
     "lodash": "^4.17.15",
-    "marked": "^0.7.0"
+    "marked": "^4.0.10"
   },
   "devDependencies": {
     "electron": "^5.0.13"
